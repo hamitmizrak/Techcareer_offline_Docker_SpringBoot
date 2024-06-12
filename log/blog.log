@@ -1,0 +1,341 @@
+2024-06-12T14:54:10.211+03:00  INFO 18256 --- [restartedMain] c.h.DockerSpringBootReactApplication     : Starting DockerSpringBootReactApplication using Java 21 with PID 18256 (G:\spring\Docker_SpringBoot_React\target\classes started by Hamit_Mizrak in G:\spring\Docker_SpringBoot_React)
+2024-06-12T14:54:10.212+03:00  INFO 18256 --- [restartedMain] c.h.DockerSpringBootReactApplication     : The following 1 profile is active: "frontend"
+2024-06-12T14:54:10.253+03:00  INFO 18256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-12T14:54:10.253+03:00  INFO 18256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-12T14:54:10.954+03:00  WARN 18256 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springdoc.core.configuration.SpringDocConfiguration.propertyCustomizingConverter
+2024-06-12T14:54:10.964+03:00  INFO 18256 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-12T14:54:10.983+03:00 ERROR 18256 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springdoc.core.configuration.SpringDocConfiguration.propertyCustomizingConverter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.0.jar:3.3.0]
+	at com.hamitmizrak.DockerSpringBootReactApplication.main(DockerSpringBootReactApplication.java:68) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.0.jar:3.3.0]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springdoc.core.configuration.SpringDocConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.8.jar:6.1.8]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.1.8.jar:6.1.8]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.1.8.jar:6.1.8]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1740) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1687) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:120) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/core/LocalVariableTableParameterNameDiscoverer
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.8.jar:6.1.8]
+	... 36 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.core.LocalVariableTableParameterNameDiscoverer
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	... 40 common frames omitted
+
+2024-06-12T14:54:52.750+03:00  INFO 11188 --- [restartedMain] c.h.DockerSpringBootReactApplication     : Starting DockerSpringBootReactApplication using Java 21 with PID 11188 (G:\spring\Docker_SpringBoot_React\target\classes started by Hamit_Mizrak in G:\spring\Docker_SpringBoot_React)
+2024-06-12T14:54:52.751+03:00  INFO 11188 --- [restartedMain] c.h.DockerSpringBootReactApplication     : The following 1 profile is active: "frontend"
+2024-06-12T14:54:52.788+03:00  INFO 11188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-12T14:54:52.788+03:00  INFO 11188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-12T14:54:53.431+03:00  WARN 11188 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springdoc.core.configuration.SpringDocConfiguration.propertyCustomizingConverter
+2024-06-12T14:54:53.441+03:00  INFO 11188 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-12T14:54:53.460+03:00 ERROR 11188 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springdoc.core.configuration.SpringDocConfiguration.propertyCustomizingConverter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.0.jar:3.3.0]
+	at com.hamitmizrak.DockerSpringBootReactApplication.main(DockerSpringBootReactApplication.java:68) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.0.jar:3.3.0]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springdoc.core.configuration.SpringDocConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.8.jar:6.1.8]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.1.8.jar:6.1.8]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.1.8.jar:6.1.8]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1740) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1687) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:120) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/core/LocalVariableTableParameterNameDiscoverer
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.8.jar:6.1.8]
+	... 36 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.core.LocalVariableTableParameterNameDiscoverer
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	... 40 common frames omitted
+
+2024-06-12T14:55:27.246+03:00  INFO 5080 --- [restartedMain] c.h.DockerSpringBootReactApplication     : Starting DockerSpringBootReactApplication using Java 21 with PID 5080 (G:\spring\Docker_SpringBoot_React\target\classes started by Hamit_Mizrak in G:\spring\Docker_SpringBoot_React)
+2024-06-12T14:55:27.249+03:00  INFO 5080 --- [restartedMain] c.h.DockerSpringBootReactApplication     : The following 1 profile is active: "frontend"
+2024-06-12T14:55:27.284+03:00  INFO 5080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-12T14:55:27.284+03:00  INFO 5080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-12T14:55:27.929+03:00  WARN 5080 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springdoc.core.configuration.SpringDocConfiguration.propertyCustomizingConverter
+2024-06-12T14:55:27.937+03:00  INFO 5080 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-12T14:55:27.953+03:00 ERROR 5080 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springdoc.core.configuration.SpringDocConfiguration.propertyCustomizingConverter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.0.jar:3.3.0]
+	at com.hamitmizrak.DockerSpringBootReactApplication.main(DockerSpringBootReactApplication.java:68) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.0.jar:3.3.0]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springdoc.core.configuration.SpringDocConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.8.jar:6.1.8]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.1.8.jar:6.1.8]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.1.8.jar:6.1.8]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1687) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:120) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.3.0.jar:3.3.0]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/core/LocalVariableTableParameterNameDiscoverer
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.8.jar:6.1.8]
+	... 36 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.core.LocalVariableTableParameterNameDiscoverer
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	... 40 common frames omitted
+
+2024-06-12T14:57:42.573+03:00  INFO 7216 --- [restartedMain] c.h.DockerSpringBootReactApplication     : Starting DockerSpringBootReactApplication using Java 21 with PID 7216 (G:\spring\Docker_SpringBoot_React\target\classes started by Hamit_Mizrak in G:\spring\Docker_SpringBoot_React)
+2024-06-12T14:57:42.574+03:00  INFO 7216 --- [restartedMain] c.h.DockerSpringBootReactApplication     : The following 1 profile is active: "frontend"
+2024-06-12T14:57:42.617+03:00  INFO 7216 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-12T14:57:42.618+03:00  INFO 7216 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-12T14:57:43.500+03:00  INFO 7216 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-12T14:57:43.563+03:00  INFO 7216 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 6 JPA repository interfaces.
+2024-06-12T14:57:44.091+03:00  INFO 7216 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 4444 (http)
+2024-06-12T14:57:44.099+03:00  INFO 7216 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-12T14:57:44.099+03:00  INFO 7216 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-06-12T14:57:44.148+03:00  INFO 7216 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-12T14:57:44.149+03:00  INFO 7216 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1531 ms
+2024-06-12T14:57:44.228+03:00  INFO 7216 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-12T14:57:44.431+03:00  INFO 7216 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./memory_persist/blog user=SA
+2024-06-12T14:57:44.432+03:00  INFO 7216 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-12T14:57:44.440+03:00  INFO 7216 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./memory_persist/blog'
+2024-06-12T14:57:44.493+03:00 DEBUG 7216 --- [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-06-12T14:57:44.493+03:00 DEBUG 7216 --- [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2024-06-12T14:57:44.856+03:00  INFO 7216 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-12T14:57:45.848+03:00  INFO 7216 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-12T14:57:45.855+03:00  INFO 7216 --- [restartedMain] c.h.audit.AuditorAwareBeanClass          : auditor Aware bean Before başladı
+2024-06-12T14:57:45.857+03:00  INFO 7216 --- [restartedMain] c.hamitmizrak.bean.Locale18NBeanClass    : swagger Open Api Before Bean başladı
+2024-06-12T14:57:45.858+03:00  INFO 7216 --- [restartedMain] c.hamitmizrak.bean.ModelMapperBeanClass  : Model mapper bean Before başladı
+2024-06-12T14:57:45.858+03:00  INFO 7216 --- [restartedMain] c.h.bean.PasswordEncoderBeanClass        : password Encoder Before Bean başladı
+2024-06-12T14:57:45.859+03:00  INFO 7216 --- [restartedMain] c.h.bean.SwaggerOpenApiBeanClass         : swagger Open Api Before Bean başladı
+2024-06-12T14:57:46.235+03:00  INFO 7216 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-12T14:57:46.699+03:00  WARN 7216 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-12T14:57:46.790+03:00 DEBUG 7216 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-06-12T14:57:46.817+03:00  INFO 7216 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-06-12T14:57:46.875+03:00 DEBUG 7216 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 41 mappings in 'requestMappingHandlerMapping'
+2024-06-12T14:57:47.275+03:00 DEBUG 7216 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-06-12T14:57:47.292+03:00 DEBUG 7216 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-06-12T14:57:47.622+03:00  INFO 7216 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-12T14:57:47.628+03:00  INFO 7216 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2024-06-12T14:57:47.702+03:00  INFO 7216 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 4444 (http) with context path ''
+2024-06-12T14:57:47.714+03:00  INFO 7216 --- [restartedMain] c.h.DockerSpringBootReactApplication     : Started DockerSpringBootReactApplication in 5.493 seconds (process running for 6.116)
+2024-06-12T14:58:03.055+03:00  INFO 7216 --- [restartedMain] r.BlogCommandLineRunner_1_Register_Email : CommandLineRunner Çalıştı Sade
+2024-06-12T14:58:03.056+03:00  INFO 7216 --- [restartedMain] .r.BlogCommandLineRunner_2_Blog_Category : Category-Blog CommandLineRunner Çalıştı
+2024-06-12T14:58:03.719+03:00  INFO 7216 --- [RMI TCP Connection(3)-192.168.1.27] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-12T14:58:03.719+03:00  INFO 7216 --- [RMI TCP Connection(3)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-12T14:58:03.719+03:00 DEBUG 7216 --- [RMI TCP Connection(3)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-06-12T14:58:03.719+03:00 DEBUG 7216 --- [RMI TCP Connection(3)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-06-12T14:58:03.720+03:00 DEBUG 7216 --- [RMI TCP Connection(3)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-06-12T14:58:03.721+03:00 DEBUG 7216 --- [RMI TCP Connection(3)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@758c38e6
+2024-06-12T14:58:03.722+03:00 DEBUG 7216 --- [RMI TCP Connection(3)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@34c2a261
+2024-06-12T14:58:03.722+03:00 DEBUG 7216 --- [RMI TCP Connection(3)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-06-12T14:58:03.722+03:00  INFO 7216 --- [RMI TCP Connection(3)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-06-12T15:00:45.447+03:00  INFO 7216 --- [SpringApplicationShutdownHook] c.h.bean.SwaggerOpenApiBeanClass         : swagger Open Api After Bean bitti
+2024-06-12T15:00:45.447+03:00  INFO 7216 --- [SpringApplicationShutdownHook] c.h.bean.PasswordEncoderBeanClass        : password Encoder After Bean bitti
+2024-06-12T15:00:45.449+03:00  INFO 7216 --- [SpringApplicationShutdownHook] c.hamitmizrak.bean.ModelMapperBeanClass  : Model mapper After bean bitti
+2024-06-12T15:00:45.449+03:00  INFO 7216 --- [SpringApplicationShutdownHook] c.hamitmizrak.bean.Locale18NBeanClass    : locale 18N After Bean Method bitti
+2024-06-12T15:00:45.449+03:00  INFO 7216 --- [SpringApplicationShutdownHook] c.h.audit.AuditorAwareBeanClass          : auditor Aware After bean bitti
+2024-06-12T15:00:45.449+03:00  INFO 7216 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-12T15:00:45.691+03:00  INFO 7216 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-12T15:00:45.699+03:00  INFO 7216 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-12T15:00:56.076+03:00  INFO 15068 --- [restartedMain] c.h.DockerSpringBootReactApplication     : Starting DockerSpringBootReactApplication using Java 21 with PID 15068 (G:\spring\Docker_SpringBoot_React\target\classes started by Hamit_Mizrak in G:\spring\Docker_SpringBoot_React)
+2024-06-12T15:00:56.077+03:00  INFO 15068 --- [restartedMain] c.h.DockerSpringBootReactApplication     : The following 1 profile is active: "frontend"
+2024-06-12T15:00:56.115+03:00  INFO 15068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-12T15:00:56.115+03:00  INFO 15068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-12T15:00:56.897+03:00  INFO 15068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-12T15:00:56.952+03:00  INFO 15068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 6 JPA repository interfaces.
+2024-06-12T15:00:57.425+03:00  INFO 15068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 4444 (http)
+2024-06-12T15:00:57.431+03:00  INFO 15068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-12T15:00:57.432+03:00  INFO 15068 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-06-12T15:00:57.477+03:00  INFO 15068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-12T15:00:57.477+03:00  INFO 15068 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1361 ms
+2024-06-12T15:00:57.544+03:00  INFO 15068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-12T15:00:57.701+03:00  INFO 15068 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./memory_persist/blog user=SA
+2024-06-12T15:00:57.702+03:00  INFO 15068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-12T15:00:57.710+03:00  INFO 15068 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./memory_persist/blog'
+2024-06-12T15:00:57.755+03:00 DEBUG 15068 --- [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-06-12T15:00:57.756+03:00 DEBUG 15068 --- [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2024-06-12T15:00:58.045+03:00  INFO 15068 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-12T15:00:58.921+03:00  INFO 15068 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-12T15:00:58.928+03:00  INFO 15068 --- [restartedMain] c.h.audit.AuditorAwareBeanClass          : auditor Aware bean Before başladı
+2024-06-12T15:00:58.929+03:00  INFO 15068 --- [restartedMain] c.hamitmizrak.bean.Locale18NBeanClass    : swagger Open Api Before Bean başladı
+2024-06-12T15:00:58.929+03:00  INFO 15068 --- [restartedMain] c.hamitmizrak.bean.ModelMapperBeanClass  : Model mapper bean Before başladı
+2024-06-12T15:00:58.931+03:00  INFO 15068 --- [restartedMain] c.h.bean.PasswordEncoderBeanClass        : password Encoder Before Bean başladı
+2024-06-12T15:00:58.932+03:00  INFO 15068 --- [restartedMain] c.h.bean.SwaggerOpenApiBeanClass         : swagger Open Api Before Bean başladı
+2024-06-12T15:00:59.240+03:00  INFO 15068 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-12T15:00:59.669+03:00  WARN 15068 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-12T15:00:59.753+03:00 DEBUG 15068 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-06-12T15:00:59.776+03:00  INFO 15068 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-06-12T15:00:59.830+03:00 DEBUG 15068 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 41 mappings in 'requestMappingHandlerMapping'
+2024-06-12T15:01:00.200+03:00 DEBUG 15068 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-06-12T15:01:00.208+03:00 DEBUG 15068 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-06-12T15:01:00.507+03:00  INFO 15068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-12T15:01:00.511+03:00  INFO 15068 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2024-06-12T15:01:00.577+03:00  INFO 15068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 4444 (http) with context path ''
+2024-06-12T15:01:00.588+03:00  INFO 15068 --- [restartedMain] c.h.DockerSpringBootReactApplication     : Started DockerSpringBootReactApplication in 4.827 seconds (process running for 5.394)
+2024-06-12T15:01:00.594+03:00  INFO 15068 --- [restartedMain] r.BlogCommandLineRunner_1_Register_Email : CommandLineRunner Çalıştı Sade
+2024-06-12T15:01:00.594+03:00  INFO 15068 --- [restartedMain] .r.BlogCommandLineRunner_2_Blog_Category : Category-Blog CommandLineRunner Çalıştı
+2024-06-12T15:01:00.967+03:00  INFO 15068 --- [RMI TCP Connection(1)-192.168.1.27] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-12T15:01:00.967+03:00  INFO 15068 --- [RMI TCP Connection(1)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-12T15:01:00.968+03:00 DEBUG 15068 --- [RMI TCP Connection(1)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-06-12T15:01:00.968+03:00 DEBUG 15068 --- [RMI TCP Connection(1)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-06-12T15:01:00.968+03:00 DEBUG 15068 --- [RMI TCP Connection(1)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-06-12T15:01:00.969+03:00 DEBUG 15068 --- [RMI TCP Connection(1)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@191d1e5e
+2024-06-12T15:01:00.970+03:00 DEBUG 15068 --- [RMI TCP Connection(1)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@419b5e33
+2024-06-12T15:01:00.970+03:00 DEBUG 15068 --- [RMI TCP Connection(1)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-06-12T15:01:00.970+03:00  INFO 15068 --- [RMI TCP Connection(1)-192.168.1.27] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-06-12T15:03:22.368+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/blog/category/api/v1/speed/10", parameters={}
+2024-06-12T15:03:22.379+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hamitmizrak.controller.api.impl.BlogCategoryApiImpl#categoryApiSpeedData(Integer)
+2024-06-12T15:03:22.414+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [text/plain, */*, application/json, application/*+json]
+2024-06-12T15:03:22.415+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["10 tane veri yüklendi"]
+2024-06-12T15:03:22.417+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-12T15:03:22.438+03:00 DEBUG 15068 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2024-06-12T15:03:22.441+03:00 DEBUG 15068 --- [http-nio-4444-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-06-12T15:03:22.442+03:00 DEBUG 15068 --- [http-nio-4444-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-06-12T15:03:22.443+03:00 DEBUG 15068 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-12T15:03:22.446+03:00 DEBUG 15068 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-12T15:03:22.447+03:00 DEBUG 15068 --- [http-nio-4444-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hamitmizrak.error.CustomErrorHandleWebRequest#handleErrorMethod(WebRequest)
+2024-06-12T15:03:22.452+03:00 DEBUG 15068 --- [http-nio-4444-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2024-06-12T15:03:22.455+03:00 DEBUG 15068 --- [http-nio-4444-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResult(path=/favicon.ico, message=No message available, error=null, status=404, createdDate=Wed J (truncated)...]
+2024-06-12T15:03:22.467+03:00 DEBUG 15068 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-06-12T15:03:57.362+03:00 DEBUG 15068 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/blog/category/api/v1/list", parameters={}
+2024-06-12T15:03:57.363+03:00 DEBUG 15068 --- [http-nio-4444-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hamitmizrak.controller.api.impl.BlogCategoryApiImpl#categoryApiList()
+2024-06-12T15:03:57.451+03:00  INFO 15068 --- [http-nio-4444-exec-3] c.h.b.s.impl.BlogCategoryServicesImpl    : Liste Sayısı: 12
+2024-06-12T15:03:57.453+03:00 DEBUG 15068 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2024-06-12T15:03:57.453+03:00 DEBUG 15068 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[BlogCategoryDto(categoryId=1, systemCreatedDate=2024-06-12 17:31:00.63, categoryName=Bilgisayar), B (truncated)...]
+2024-06-12T15:03:57.459+03:00 DEBUG 15068 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-12T15:04:41.471+03:00 DEBUG 15068 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/blog/category/api/v1/find/1", parameters={}
+2024-06-12T15:04:41.473+03:00 DEBUG 15068 --- [http-nio-4444-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hamitmizrak.controller.api.impl.BlogCategoryApiImpl#categoryApiFindById(Long)
+2024-06-12T15:04:41.492+03:00 DEBUG 15068 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2024-06-12T15:04:41.492+03:00 DEBUG 15068 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [BlogCategoryDto(categoryId=1, systemCreatedDate=2024-06-12 17:31:00.63, categoryName=Bilgisayar)]
+2024-06-12T15:04:41.493+03:00 DEBUG 15068 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-12T15:05:46.893+03:00 DEBUG 15068 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/blog/category/api/v1/list", parameters={}
+2024-06-12T15:05:46.895+03:00 DEBUG 15068 --- [http-nio-4444-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hamitmizrak.controller.api.impl.BlogCategoryApiImpl#categoryApiList()
+2024-06-12T15:05:46.912+03:00  INFO 15068 --- [http-nio-4444-exec-9] c.h.b.s.impl.BlogCategoryServicesImpl    : Liste Sayısı: 12
+2024-06-12T15:05:46.913+03:00 DEBUG 15068 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2024-06-12T15:05:46.914+03:00 DEBUG 15068 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[BlogCategoryDto(categoryId=1, systemCreatedDate=2024-06-12 17:31:00.63, categoryName=Bilgisayar), B (truncated)...]
+2024-06-12T15:05:46.916+03:00 DEBUG 15068 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-12T15:05:49.660+03:00 DEBUG 15068 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/blog/category/api/v1/find/1", parameters={}
+2024-06-12T15:05:49.662+03:00 DEBUG 15068 --- [http-nio-4444-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hamitmizrak.controller.api.impl.BlogCategoryApiImpl#categoryApiFindById(Long)
+2024-06-12T15:05:49.664+03:00 DEBUG 15068 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2024-06-12T15:05:49.664+03:00 DEBUG 15068 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [BlogCategoryDto(categoryId=1, systemCreatedDate=2024-06-12 17:31:00.63, categoryName=Bilgisayar)]
+2024-06-12T15:05:49.665+03:00 DEBUG 15068 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-12T15:05:53.080+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/blog/category/api/v1/find/1", parameters={}
+2024-06-12T15:05:53.081+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hamitmizrak.controller.api.impl.BlogCategoryApiImpl#categoryApiFindById(Long)
+2024-06-12T15:05:53.084+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2024-06-12T15:05:53.084+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [BlogCategoryDto(categoryId=1, systemCreatedDate=2024-06-12 17:31:00.63, categoryName=Bilgisayar)]
+2024-06-12T15:05:53.085+03:00 DEBUG 15068 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-12T15:36:23.640+03:00  INFO 15068 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 110 class path changes (0 additions, 110 deletions, 0 modifications)
+2024-06-12T15:36:23.651+03:00  INFO 15068 --- [Thread-6] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-12T15:36:23.654+03:00  INFO 15068 --- [Thread-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-06-12T15:36:23.665+03:00  INFO 15068 --- [Thread-6] c.h.bean.SwaggerOpenApiBeanClass         : swagger Open Api After Bean bitti
+2024-06-12T15:36:23.665+03:00  INFO 15068 --- [Thread-6] c.h.bean.PasswordEncoderBeanClass        : password Encoder After Bean bitti
+2024-06-12T15:36:23.667+03:00  INFO 15068 --- [Thread-6] c.hamitmizrak.bean.ModelMapperBeanClass  : Model mapper After bean bitti
+2024-06-12T15:36:23.667+03:00  INFO 15068 --- [Thread-6] c.hamitmizrak.bean.Locale18NBeanClass    : locale 18N After Bean Method bitti
+2024-06-12T15:36:23.667+03:00  INFO 15068 --- [Thread-6] c.h.audit.AuditorAwareBeanClass          : auditor Aware After bean bitti
+2024-06-12T15:36:23.667+03:00  INFO 15068 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-12T15:36:23.685+03:00  INFO 15068 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-12T15:36:23.704+03:00  INFO 15068 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

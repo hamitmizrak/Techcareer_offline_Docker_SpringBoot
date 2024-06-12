@@ -1,0 +1,116 @@
+package com.hamitmizrak.fullstackdeveloper12.security;
+
+/*
+permitAll()   => Herkese İzin ver (Public)
+denyAll()     => Kimse İzin verme (private)
+
+hasAnyRole()  => Çok role demektir
+hasRole()     => Tek role demektir.
+
+hasAnyAuthority()  => Çoklu Yetkilendirme
+hasAuthority()     => Tekli Yetkilendirme
+*/
+
+import com.hamitmizrak.fullstackdeveloper12.business.services.impl.LoginServicesImpl;
+import com.hamitmizrak.fullstackdeveloper12.role.ERole;
+import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+
+// LOMBOK
+@RequiredArgsConstructor
+
+// SECURITY
+@EnableWebSecurity
+@Configuration
+public class WebSecurityConfig {
+
+    // Security Bean
+    // UserDetailsService
+    @Bean
+    public UserDetailsService userDetailsService(){
+        return new LoginServicesImpl();
+    }
+
+    // BCryptPasswordEncoder
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+
+    // DaoAuthenticationProvider
+    @Bean
+    public DaoAuthenticationProvider daoAuthenticationProvider(){
+        DaoAuthenticationProvider daoAuthenticationProvider=new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setUserDetailsService(userDetailsService());
+        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+        return daoAuthenticationProvider;
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    // DATABASE
+    @Autowired
+    @SneakyThrows // throw Exception
+    public void myDatabaseAddUSerRoles(AuthenticationManagerBuilder authenticationManagerBuilder){
+        authenticationManagerBuilder.authenticationProvider(daoAuthenticationProvider());
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    @Value("${spring.command.line.rules.superadmin.roles}")
+    private String applicationSuperAdminRules;
+
+    /*
+    Postman kullanmak için: httpBasic() yapmalısın
+    httpSecurity.httpBasic()  => http düzeyinde
+    httpSecurity.formLogin()  => Form düzeyinde
+    ROLE_ =>  role için ROLE_ eklemek veya eklememek duruma göre değişiyor
+    */
+    @Bean
+    @SneakyThrows // throw Exception
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity){
+        httpSecurity.authorizeRequests()
+                .requestMatchers("/static/**").permitAll()
+                .requestMatchers("/css/**").permitAll()
+                .requestMatchers("/js/**").permitAll()
+                .requestMatchers("/images/**").permitAll()
+
+                .requestMatchers("/","/index").permitAll()
+
+                .requestMatchers("/login","/logout").permitAll()
+
+                .requestMatchers("/swagger-ui/**").hasAnyAuthority(ERole.ADMIN.toString())
+                .requestMatchers("/swagger-ui/**").hasAnyAuthority(applicationSuperAdminRules)
+
+                //*** H2-Console Varsa aktifleştir
+                .requestMatchers("/h2-console/**").hasAnyAuthority(ERole.ADMIN.toString())
+                .requestMatchers("/h2-console/**").hasAnyAuthority(applicationSuperAdminRules)
+
+                .anyRequest()
+                .authenticated()
+                .and()
+                //.httpBasic() // Postmande çalışması için
+                .formLogin();
+
+        //*** H2-Console Varsa aktifleştir
+        // H2-Console
+        httpSecurity.csrf().disable();
+
+        //// H2-Console içindeki tabloları aktifleştirmek için
+        httpSecurity.headers().frameOptions().disable();
+
+        return httpSecurity.build();
+    } //end SecurityFilterChain
+
+} //end class
