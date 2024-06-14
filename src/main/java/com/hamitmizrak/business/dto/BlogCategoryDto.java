@@ -36,7 +36,7 @@ public class BlogCategoryDto extends AuditingAwareBaseDto implements Serializabl
 
     // CATEGORY NAME
     // kendi Anonotation'ı yazdım.
-    @UniqueBlogCategoryValidationName
+    //@UniqueBlogCategoryValidationName
     @NotEmpty(message = "{blog.category.validation.constraints.NotNull.message}")
     @Size(min=2,message = "{blog.category.least.validation.constraints.NotNull.message}")
     private String categoryName;
