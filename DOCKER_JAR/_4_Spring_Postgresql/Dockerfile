@@ -15,9 +15,10 @@
 # Docker Push
 #docker image ls (IMAGE ADINI ALINIZ)
 #docker image tag <IMAGE_NAME> <MY_DOCKER_HUB_REPOSITORY_NAME>
-#docker image tag blog_react javahamitmizrak/docker_spring_boot_mysqldb
+#docker image tag spring_postgresq javahamitmizrak/docker_spring_boot_postgresdb
 #docker push <MY_DOCKER_HUB_REPOSITORY_NAME>
-#docker push javahamitmizrak/docker_spring_boot_mysqldb
+#docker push javahamitmizrak/docker_spring_boot_postgresdb
+
 
 
 # FROM: Çalıştıracağımız image gösteriri
@@ -56,11 +57,11 @@ EXPOSE 4444
 ARG JAR_FILE=*.jar
 
 # Proje yeni ismi: spring_react
-ADD ${JAR_FILE} blog_react
+ADD ${JAR_FILE} spring_postgresq
 
 # Docker Container çalışması sırasında varsayılan komutlar
 # Uygulamayı başlatacak komutlar
-ENTRYPOINT [ "java", "-jar","/blog_react" ]
+ENTRYPOINT [ "java", "-jar","/spring_postgresq" ]
 
 # USER: Kullanıcı göstersin USER poweruser
 # ADD: Ekleme

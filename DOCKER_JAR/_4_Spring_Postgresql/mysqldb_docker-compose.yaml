@@ -1,0 +1,56 @@
+# docker-compose --version
+# docker-compose up
+# docker-compose up -d
+# docker-compose -f my_docker_compose.yml up
+# docker-compose -f mysqldb_docker-compose.yaml.yml up
+# docker-compose down
+# docker-compose restart
+# docker-compose ps
+
+# restart: on-failure
+# restart: no => default olandır. Yani docker compose otomatik olarak restart yapsın
+# restart: unless-stopped => Konteynar durduğunda otomatik olarak yeniden başlasın
+# restart: always => Konteynar her zaman otomatik başlasın
+# restart: on-failure => konteryanar çökmesi halinde otomatik başlasın
+
+
+version: '3.1'
+
+services:
+  web:
+    container_name: spring_postgresq
+    image: spring_postgresq
+    restart: always
+    build: ./
+    ports:
+      - "4444:4444"
+    networks:
+      - springpostgres
+    depends_on:
+      - "PostgreSQL"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://PostgreSQL:5432/blog
+      SPRING_DATASOURCE_USERNAME: "postgres"
+      SPRING_DATASOURCE_PASSWORD: "postgres"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: create
+
+  PostgreSQL:
+    container: postgres_db
+    image: postgres
+    ports:
+      - "5432:5432"
+    expose:
+      - "3306"
+
+    networks:
+      - springpostgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES__DB=blog
+    restart: unless-stopped
+
+networks:
+  springpostgres:
+    name: springpostgres
+    driver: bridge
