@@ -57,11 +57,11 @@ EXPOSE 4444
 ARG JAR_FILE=*.jar
 
 # Proje yeni ismi: spring_react
-ADD ${JAR_FILE} spring_postgresq
+ADD ${JAR_FILE} spring_postgres
 
 # Docker Container çalışması sırasında varsayılan komutlar
 # Uygulamayı başlatacak komutlar
-ENTRYPOINT [ "java", "-jar","/spring_postgresq" ]
+ENTRYPOINT [ "java", "-jar","/spring_postgres" ]
 
 # USER: Kullanıcı göstersin USER poweruser
 # ADD: Ekleme
@@ -79,7 +79,3 @@ ENTRYPOINT [ "java", "-jar","/spring_postgresq" ]
 # Konteynar sağlıklı çalışıyor mu
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
  CMD wget --quiet --tries=1 --spider http://localhost:4444 exit 1
-
-
-
-########################################################
